@@ -8,6 +8,16 @@
     <input type="submit" value="Enviar datos de nueva información!">
 
     </form>
+
+    <br><hr>
+    <h5>Realizar busqueda de estudiante:</h5>
+    <form action="{% url 'AppCoderBuscarCurso'  %}">
+
+            {{ form_busqueda.as_p }}
+            <input type="submit" value="Realizar busqueda!">
+    </form>
+    <hr><br>
+
     {% if alumnos %}
         {% for alumnos in alumnos %}
             <p>nombre: {{ estudiantes.nombre }}</p>
@@ -16,7 +26,7 @@
             <p>email: {{ estudiantes.email }}</p>
         {% endfor %}
     {% else %}
-        <h1>No hay cursos en este momento</h1>
+        <h3>No hay estudiantes en este momento</h3>
     {% endif %}
 
 

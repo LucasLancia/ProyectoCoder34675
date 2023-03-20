@@ -24,9 +24,9 @@ class BusquedaCursoForms(forms.Form):
 
 
 class BusquedaAlumnoForms(forms.Form):
-    nombre = forms.CharField(min_length=3, max_length=20)
+    ##nombre = forms.CharField(min_length=3, max_length=20)
     apellido = forms.CharField(max_length=15)
 
 class BusquedaProfesorForms(forms.Form):
-    nombre = forms.CharField(min_length=3, max_length=20)
+    ##nombre = forms.CharField(min_length=3, max_length=20)
     apellido = forms.CharField(max_length=15)

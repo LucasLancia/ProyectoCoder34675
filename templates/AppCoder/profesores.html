@@ -8,6 +8,16 @@
     <input type="submit" value="Enviar datos de nueva información!">
 
     </form>
+
+    <br><hr>
+    <h5>Realizar busqueda de docente:</h5>
+    <form action="{% url 'AppCoderBuscarCurso'  %}">
+
+            {{ form_busqueda.as_p }}
+            <input type="submit" value="Realizar busqueda!">
+    </form>
+    <hr><br>
+
     {% if profesores %}
         {% for profesor in profesores %}
             <p>nombre: {{ profesor.nombre }}</p>
@@ -17,7 +27,7 @@
             <p>profesion: {{ profesor.profesion }}</p>
         {% endfor %}
     {% else %}
-        <h1>No hay profesores en este momento!</h1>
+        <h3>No hay profesores en este momento!</h3>
     {% endif %}
 
 
