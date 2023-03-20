@@ -4,13 +4,13 @@ from django import forms
 class AlumnoFormulario(forms.Form):
     nombre=forms.CharField(max_length=15)
     apellido=forms.CharField(max_length=15)
-    telefono=forms.CharField(max_length=15)
+    ##telefono=forms.CharField(max_length=15)
     email=forms.CharField(max_length=40)
 
 class ProfesorFormulario(forms.Form):
     nombre=forms.CharField(max_length=15)
     apellido=forms.CharField(max_length=15)
-    telefono=forms.CharField(max_length=15)
+    ##telefono=forms.CharField(max_length=15)
     email=forms.CharField(max_length=40)
     profesion=forms.CharField(max_length=40)
 
