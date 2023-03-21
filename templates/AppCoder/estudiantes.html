@@ -2,6 +2,8 @@
 
 
 {% block contenido_cambia %}
+    <br><hr>
+    <h5>Cargar nuevo estudiante:</h5>
     <form action="{% url 'AppCoderEstudiantes'  %}" method="post">
     {% csrf_token %}
     {{ form.as_p }}
@@ -11,7 +13,7 @@
 
     <br><hr>
     <h5>Realizar busqueda de estudiante:</h5>
-    <form action="{% url 'AppCoderBuscarCurso'  %}">
+    <form action="{% url 'AppCoderEstudiantes'  %}">
 
             {{ form_busqueda.as_p }}
             <input type="submit" value="Realizar busqueda!">
@@ -20,10 +22,10 @@
 
     {% if alumnos %}
         {% for alumnos in alumnos %}
-            <p>nombre: {{ estudiantes.nombre }}</p>
+     <!--   <p>nombre: {{ estudiantes.nombre }}</p>
             <p>apellido: {{ estudiantes.apellido }}</p>
             <p>telefono: {{ estudiantes.telefono }}</p>
-            <p>email: {{ estudiantes.email }}</p>
+            <p>email: {{ estudiantes.email }}</p> -->
         {% endfor %}
     {% else %}
         <h3>No hay estudiantes en este momento</h3>

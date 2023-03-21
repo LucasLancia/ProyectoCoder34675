@@ -4,6 +4,7 @@ from AppCoder.forms import CursoForms, BusquedaCursoForms, BusquedaProfesorForms
 
 
 def busqueda_curso(request):
+    context = {}
     mi_formulario = BusquedaCursoForms(request.GET)
     if mi_formulario.is_valid():
         informacion = mi_formulario.cleaned_data
@@ -43,10 +44,11 @@ def crear_curso(request, nombre, camada):
         "nombre": nombre,
         "camada": camada
     }
-    return render(request, "AppCoder/save_curso.html", context)
+    return render(request, "AppCoder/save_curso.html", context=context)
 
 
 def estudiantes(request):
+    context = {}
     if request.method == "POST":
         mi_formulario = AlumnoFormulario(request.POST)
 
@@ -124,7 +126,7 @@ def crear_estudiante(request, nombre,apellido,email):
         "apellido":apellido,
         "email":email
     }
-    return render(request, "AppCoder/save_estudiante.html", context)
+    return render(request, "AppCoder/save_estudiante.html", context=context)
 
 def crear_profesor(request, nombre,apellido,email,profesion):
     save_profesor = profesor(nombre=nombre,apellido=apellido,email=email,profesion=profesion)
@@ -136,4 +138,4 @@ def crear_profesor(request, nombre,apellido,email,profesion):
         "email":email,
         "profesion":profesion
     }
-    return render(request, "AppCoder/save_profesor.html", context)
+    return render(request, "AppCoder/save_profesor.html", context=context)
